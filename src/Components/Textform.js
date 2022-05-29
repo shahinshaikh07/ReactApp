@@ -19,11 +19,19 @@ const handleClearClick = () => {
     setText(newText);
 }
 
-const handleCopy = () => {}
-const handleExtraSpace = () => {}
+const handleCopy = () => {
+     navigator.clipboard.writeText(text); 
+}
+
+const handleExtraSpace = () => {
+    let newText = text.split(/[ ]+/);
+    setText(newText.join(" "));}
+
+
 const handleOnChange = (event) => {
     setText(event.target.value) 
 }
+ let wordCount = text === "" ? "0" : text.trim().split(/\s+/).length;
 
   return (
    <div className='container'>
@@ -45,6 +53,9 @@ const handleOnChange = (event) => {
     <p>
         {text.length > 0 ? text : "Type something above to preview it here"}
       </p>
+      <p>{wordCount} words and {text.length} characters
+        </p>
+        
 </div>
 
    </div>

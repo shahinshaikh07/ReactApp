@@ -5,8 +5,8 @@ import Textform from './Components/Textform';
 
 function App() {
   return (<>
-  <Navbar/>
-  <Textform/>
+  <Navbar title="WriteOn"/>
+  <Textform heading="Enter text here"/>
   </>
   );
 }
